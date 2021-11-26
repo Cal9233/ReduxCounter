@@ -1,31 +1,14 @@
-import React from 'react';
-import { Button, makeStyles } from '@material-ui/core';
+import React from "react";
 
-const Buttons = (props) => {
-
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-      },
-    },
-    buttons: {
-      borderRadius: '4px',
-      color: 'gray',
-      boxSizing: 'border-box',
-      background:'linear-gradient(113.96deg, #189AB4 0%, #006096 100%)'
-    }
-  }))
-
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <Button onClick={props.clicked} className={classes.buttons}>
-        {props.children}
-      </Button>
-    </div>
-  )
+function Buttons(props) {
+    return (
+        <button
+            onClick={props.clicked}
+            className="bg-white shadow-md hover:bg-gray-100 text-gray-800 font-semibold py-2 px-5 border border-gray-400 rounded shadow"
+        >
+            {props.children}
+        </button>
+    );
 }
 
-export default Buttons
+export default Buttons;
